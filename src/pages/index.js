@@ -1,27 +1,28 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
+import { StaticImage } from "gatsby-plugin-image"
 import Layout from '@global/layout/layout'
 import SEO from '@global/seo'
+import * as styles from '../components/index.module.scss'
+import {links} from '../data'
+
 
 const IndexPage = () => (
 	<Layout>
-		<SEO title='Home' />
-
-		<section className='wrapper-sm section text-block'>
-			<h2>Hello</h2>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam odio
-				minima magni, modi molestiae reiciendis illo? Totam cumque eum
-				temporibus!
-			</p>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam odio
-				minima magni, modi molestiae reiciendis illo? Totam cumque eum
-				temporibus!
-			</p>
-			<Link to='/examples'>Examples Page</Link>
-		</section>
+		<div className={styles.container}>
+			<div className={styles.grid}>
+				{links.map(link=>(
+					<div className={`${styles.item} ${link.blurred && styles.blurredStyle}`}>{link.url}</div>
+				))}
+			</div>
+		<StaticImage
+			src="../assets/images/tburd_trip_full_texturefinal.jpeg"
+			alt="not a sheet of acid"
+			placeholder="blurred"
+			layout="fullWidth"
+		/>
+		</div>
+		
 	</Layout>
 )
 

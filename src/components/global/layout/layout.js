@@ -9,9 +9,9 @@ import './global.scss'
 
 const Layout = ({ children }) => (
 	<>
-		<Header />
+		{/* <Header /> */}
 		<main>{children}</main>
-		<Footer />
+		{/* <Footer /> */}
 		{/* <CookieBanner /> */}
 	</>
 )
