@@ -11,11 +11,11 @@ const IndexPage = () => (
 	<Layout>
 		<div className={styles.container}>
 			<div className={styles.grid}>
-				{links.map(link => (
-					<div className={`${styles.item} ${link.blurred && styles.blurredStyle}`}>
-						<a>{link.url}</a>
-					</div>
-				))}
+				{links.map(link => {
+					return link.url ? (<a href={link.url} target="_blank" rel="noreferrer" className={`${styles.item}`}>
+					</a>) : (<div className={`${styles.item} ${styles.blurredStyle}`}>
+					</div>)
+				})}
 			</div>
 			<StaticImage
 				src="../assets/images/tburd_trip_full_texturefinal.jpeg"
@@ -24,7 +24,7 @@ const IndexPage = () => (
 				layout="fullWidth"
 			/>
 		</div>
-	</Layout>
+	</Layout >
 )
 
 export default IndexPage
