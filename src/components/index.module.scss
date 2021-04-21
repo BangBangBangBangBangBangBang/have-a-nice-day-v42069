@@ -15,15 +15,10 @@
     grid-template-rows: repeat(10, 1fr);
 }
 
-// .item {
-//   background-color: yellowgreen;
-// }
+.item:not(.blurredStyle):hover {
+    backdrop-filter: hue-rotate(90deg);
+}
 
 .blurredStyle {
-    backdrop-filter: blur(2000px);
+    backdrop-filter: blur(42px);
 }
-
-a {
-    cursor: pointer;
-}
-
