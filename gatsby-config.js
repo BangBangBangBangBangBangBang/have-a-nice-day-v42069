@@ -12,7 +12,7 @@ module.exports = {
 		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
-				icon: 'src/images/gatsby-icon.png',
+				icon: 'src/assets/images/disscord-icons/cactuswink.png',
 			},
 		},
 		'gatsby-plugin-mdx',
@@ -22,7 +22,7 @@ module.exports = {
 			resolve: 'gatsby-plugin-web-font-loader',
 			options: {
 				google: {
-					families: ['Droid Sans', 'Droid Serif'],
+					families: ['Orbitron:900'],
 				},
 			},
 		},
