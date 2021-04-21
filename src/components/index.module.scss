@@ -1,6 +1,7 @@
 .container {
     max-width: 1200px;
     position: relative;
+    margin: 60px auto;
 }
 
 .grid {
@@ -15,10 +16,23 @@
     grid-template-rows: repeat(10, 1fr);
 }
 
-.item:not(.blurredStyle):hover {
-    backdrop-filter: hue-rotate(90deg);
+@keyframes example {
+    0% {backdrop-filter: hue-rotate(0deg);}
+    50% {backdrop-filter: hue-rotate(420deg);}
+    100% {backdrop-filter: hue-rotate(0deg);}
+  }
+
+.item:not(.blurredStyle) {
+    transition: all 0s;
+
+    &:hover {
+        // backdrop-filter: hue-rotate(420deg);
+        // transition: all 1s;
+        animation: example 3s forwards infinite;
+    }
 }
 
 .blurredStyle {
     backdrop-filter: blur(42px);
 }
+

@@ -2,30 +2,32 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import { Hamburger, Times, Logo } from '@images/icons'
 import * as styles from './header.module.scss'
+import { useStaticQuery, graphql } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 
 const Header = () => {
 	const [isOpen, toggleNav] = useState(false)
-
+	const data = useStaticQuery(graphql`
+	query MyQuery {
+		file(relativePath: {eq: "haveanicedaytrip1.jpeg"}) {
+		  childImageSharp {
+			fluid(quality: 100, maxWidth: 2600) {
+				...GatsbyImageSharpFluid_withWebp
+			  }
+		  }
+		}
+	  }	  
+  `)
 	return (
-		<header className={styles.header}>
-			<div className={`${styles.container} wrapper`}>
-				<Link to='/' className={styles.logo}>
-					<Logo />
-				</Link>
 
-				<button className={styles.toggle} onClick={() => toggleNav(!isOpen)}>
-					{isOpen ? <Times /> : <Hamburger />}
-				</button>
+		<BackgroundImage
+			fluid={data.file.childImageSharp.fluid}
+			className={styles.banner}
+		>
 
-				<nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>
-					<Link to='/'>Home</Link>
-					<Link to='/examples'>Examples</Link>
-					<Link to='/'>Page</Link>
-					<Link to='/'>Page</Link>
-					<Link to='/'>Page</Link>
-				</nav>
-			</div>
-		</header>
+		</BackgroundImage>
+
+
 	)
 }
 
