@@ -10,14 +10,29 @@ html {
   font-size: 62.5%;
 }
 
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
 body {
+  font-family: "Orbitron", sans-serif;
   color: #333;
   background-color: #fff;
   box-sizing: border-box;
   position: relative;
   font-size: 1.7rem;
-  font-family: sans-serif;
   line-height: 1.6;
+  background: linear-gradient(-45deg,  #FFDFE0, #FFD5D7, #FECBCE, #FDB6C0, #FCA1B6, #FA8DB1, #F77BB4, #F569BF, #F15AD2, #EC4BED, #BD3FE9, #8334E4, #402BDE, #2350D7, #1C93CF, #16C7B2, #11BD57, #1CB30D, #67A90A, #9E9208, #924606, #870505);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
 h1,h2,h3,h4,h5,h6 { 
@@ -34,10 +49,10 @@ img {
 
 a { 
   text-decoration: none;
-  color: lightcoral;
+  color: rgb(215, 232, 27);
   transition: color .3s;
   &:hover {
-    color: lighten(lightcoral, 10%);
+    color: rgb(255, 255, 255);
   }
 }
 
