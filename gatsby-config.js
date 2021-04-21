@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
 	siteMetadata: {
 		title: 'HAVE A NICE DAY',
-		siteUrl: 'https://haveaniceday.wtf/'
+		siteUrl: 'https://haveaniceday.wtf/',
 	},
 	plugins: [
 		'gatsby-plugin-sass',
@@ -16,7 +16,6 @@ module.exports = {
 				icon: 'src/assets/images/disscord-icons/cactuswink.png',
 			},
 		},
-		'gatsby-plugin-mdx',
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-sharp',
 		{
