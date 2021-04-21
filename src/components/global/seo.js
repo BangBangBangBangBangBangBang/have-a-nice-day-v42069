@@ -1,13 +1,26 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { useStaticQuery, graphql } from "gatsby"
 
 const SEO = ({
-	title = `My Starter`,
-	description = `This is a description`,
-	url = `site.com`,
-	imageUrl = `image.com`,
+	title = `HAVE A NICE DAY`,
+	description = `HAVE A NICE DAY`,
+	url = `https://haveaniceday.wtf`,
 	article,
-}) => (
+}) => {
+	const data = useStaticQuery(graphql`
+	query SeoQuery {
+		file(relativePath: {eq: "bnggng.png"}) {
+		  publicURL
+		}
+	  }	  
+  `)
+  
+  console.log(data)
+
+  const imageUrl = "data.file.publicURL"
+
+	return (
 	<Helmet>
 		<title>{title}</title>
 		<meta name='description' content={description} />
@@ -26,5 +39,6 @@ const SEO = ({
 		<meta property='og:image' content={imageUrl} />
 	</Helmet>
 )
+	}
 
 export default SEO

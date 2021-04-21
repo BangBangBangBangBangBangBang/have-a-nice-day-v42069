@@ -2,7 +2,8 @@ const path = require('path')
 
 module.exports = {
 	siteMetadata: {
-		title: 'gatsby-starter-v3',
+		title: 'HAVE A NICE DAY',
+		siteUrl: 'https://haveaniceday.wtf/'
 	},
 	plugins: [
 		'gatsby-plugin-sass',

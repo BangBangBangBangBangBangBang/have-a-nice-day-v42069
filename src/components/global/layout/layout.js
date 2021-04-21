@@ -7,8 +7,17 @@ import Footer from '@global/footer/footer'
 
 import './global.scss'
 
+import {Helmet} from 'react-helmet'
+
 const Layout = ({ children }) => (
 	<>
+
+<Helmet>
+		<title>HAVE A NICE DAY</title>
+		<meta name='description' content="Bang Bang" />
+
+	</Helmet>
+
 		<Header />
 		<main>{children}</main>
 		<Footer />
