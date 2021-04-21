@@ -1,17 +1,38 @@
 .footer {
-  padding: 3.2rem 0;
-  font-size: 1.6rem;
-  background-color: #6583c6;
-  text-align: center;
+	padding: 3.2rem 0;
+	font-size: 1.6rem;
+	background-color: #7a05a5;
+}
+.inner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.nav {
+	margin-bottom: 16px;
+
+	p {
+		color: white;
+		margin: 0 2rem;
+	}
 }
 
-.nav { 
-
-  a {
-    margin: 0 2rem;
-  }
+.discord {
+	text-align: center;
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 }
 
-@media only screen and (max-width: 900px) {
+.img {
+	margin: 10px;
+}
 
+@media only screen and (max-width: 800px) {
+	.nav {
+		display: flex;
+		flex-direction: column;
+	}
 } // end of whenMedium

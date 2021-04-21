@@ -1,30 +1,36 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from 'gatsby-plugin-image'
 import Layout from '@global/layout/layout'
-import SEO from '@global/seo'
 import * as styles from '../components/index.module.scss'
 import { links } from '../data'
-
 
 const IndexPage = () => (
 	<Layout>
 		<div className={styles.container}>
 			<div className={styles.grid}>
-				{links.map(link => {
-					return link.url ? (<a href={link.url} target="_blank" rel="noreferrer" className={`${styles.item}`}>
-					</a>) : (<div className={`${styles.item} ${styles.blurredStyle}`}>
-					</div>)
+				{links.map((link, i) => {
+					return link.url ? (
+						<a
+							href={link.url}
+							key={link.url}
+							target='_blank'
+							rel='noreferrer'
+							className={`${styles.item}`}
+							aria-label={`Go to Have a Nice Day #${i}`}
+						/>
+					) : (
+						<div key={i} className={`${styles.item} ${styles.blurredStyle}`} />
+					)
 				})}
 			</div>
 			<StaticImage
-				src="../assets/images/tburd_trip_full_texturefinal.jpeg"
-				alt="not a sheet of acid"
-				placeholder="blurred"
-				layout="fullWidth"
+				src='../assets/images/tburd_trip_full_texturefinal.jpeg'
+				alt='not a sheet of acid'
+				placeholder='blurred'
+				layout='fullWidth'
 			/>
 		</div>
-	</Layout >
+	</Layout>
 )
 
 export default IndexPage

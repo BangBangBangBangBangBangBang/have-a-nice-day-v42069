@@ -1,42 +1,44 @@
-.body {
-    background-color: orangered;
-}
-
 .container {
-    max-width: 1200px;
-    position: relative;
-    margin: 60px auto;
+	max-width: 1200px;
+	position: relative;
+	margin: 60px auto;
+	padding: 0 20px;
 }
 
 .grid {
-    display: grid;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 100;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+	display: grid;
+	position: absolute;
+	top: 0;
+	left: 20px;
+	bottom: 0;
+	right: 20px;
+	z-index: 100;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(10, 1fr);
 }
 
 @keyframes example {
-    0% {backdrop-filter: hue-rotate(0deg);}
-    50% {backdrop-filter: hue-rotate(420deg);}
-    100% {backdrop-filter: hue-rotate(0deg);}
-  }
+	0% {
+		backdrop-filter: hue-rotate(0deg);
+	}
+	50% {
+		backdrop-filter: hue-rotate(420deg);
+	}
+	100% {
+		backdrop-filter: hue-rotate(0deg);
+	}
+}
 
 .item:not(.blurredStyle) {
-    transition: all 0s;
+	transition: all 0s;
 
-    &:hover {
-        // backdrop-filter: hue-rotate(420deg);
-        // transition: all 1s;
-        animation: example 3s forwards infinite;
-    }
+	&:hover {
+		// backdrop-filter: hue-rotate(420deg);
+		// transition: all 1s;
+		animation: example 3s forwards infinite;
+	}
 }
 
 .blurredStyle {
-    backdrop-filter: blur(15px);
+	backdrop-filter: blur(15px);
 }
-
