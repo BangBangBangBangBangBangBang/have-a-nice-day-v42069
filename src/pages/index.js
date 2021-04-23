@@ -29,6 +29,7 @@ const IndexPage = () => (
 				placeholder='blurred'
 				layout='fullWidth'
 			/>
+			<div className={styles.bg} style={{ height: '80%' }}></div>
 		</div>
 	</Layout>
 )

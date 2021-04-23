@@ -33,12 +33,41 @@
 	transition: all 0s;
 
 	&:hover {
-		// backdrop-filter: hue-rotate(420deg);
-		// transition: all 1s;
 		animation: example 3s forwards infinite;
 	}
 }
 
-.blurredStyle {
-	backdrop-filter: blur(15px);
+.bg {
+	display: none;
+}
+
+@supports (backdrop-filter: blur(15px)) {
+	.blurredStyle {
+		backdrop-filter: blur(15px);
+		background-color: transparent;
+	}
+}
+
+@supports not (backdrop-filter: blur(15px)) {
+	.bg {
+		display: block;
+		background-image: url('../assets/images/tburd_trip_full_texturefinal.jpeg');
+		background-size: cover;
+		background-position: bottom center;
+		position: absolute;
+		left: 20px;
+		bottom: 0px;
+		right: 20px;
+		z-index: 100;
+		filter: blur(12px);
+	}
+
+	.item:not(.blurredStyle) {
+		transition: all 0.3s;
+		background-color: 'transparent';
+		&:hover {
+			animation: none;
+			background-color: rgba(#6d0052, 0.4);
+		}
+	}
 }
