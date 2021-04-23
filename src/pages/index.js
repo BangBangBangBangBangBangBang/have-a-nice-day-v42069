@@ -15,21 +15,20 @@ const IndexPage = () => (
 							key={link.url}
 							target='_blank'
 							rel='noreferrer'
-							className={`${styles.item}`}
+							className={styles.item}
 							aria-label={`Go to Have a Nice Day #${i}`}
 						/>
 					) : (
-						<div key={i} className={`${styles.item} ${styles.blurredStyle}`} />
+						<div key={i} className={styles.item} />
 					)
 				})}
 			</div>
 			<StaticImage
-				src='../assets/images/tburd_trip_full_texturefinal.jpeg'
+				src='../assets/images/reveal/2-rows-revealed__tburd_trip_full_web.jpg'
 				alt='not a sheet of acid'
 				placeholder='blurred'
 				layout='fullWidth'
 			/>
-			<div className={styles.bg} style={{ height: '80%' }}></div>
 		</div>
 	</Layout>
 )

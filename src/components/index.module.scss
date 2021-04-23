@@ -6,15 +6,47 @@
 }
 
 .grid {
-	display: grid;
+	display: flex;
+	flex-wrap: wrap;
 	position: absolute;
 	top: 0;
 	left: 20px;
 	bottom: 0;
 	right: 20px;
 	z-index: 100;
-	grid-template-columns: repeat(10, 1fr);
-	grid-template-rows: repeat(10, 1fr);
+}
+
+.item {
+	flex-basis: 10%;
+	height: 10%;
+	display: block;
+}
+
+.item:not(div) {
+	transition: all 0s;
+	cursor: pointer;
+
+	&:hover {
+		animation: example 3s forwards infinite;
+	}
+}
+
+@supports (backdrop-filter: blur(15px)) or (-webkit-backdrop-filter: blur(15px)) {
+	.blurredStyle {
+		backdrop-filter: blur(15px);
+		background-color: transparent;
+	}
+}
+
+@supports not (backdrop-filter: hue-rotate(0deg)) {
+	.item:not(div) {
+		transition: all 0.3s;
+		background-color: 'transparent';
+		&:hover {
+			animation: none;
+			background-color: rgba(#6d0052, 0.4);
+		}
+	}
 }
 
 @keyframes example {
@@ -26,48 +58,5 @@
 	}
 	100% {
 		backdrop-filter: hue-rotate(0deg);
-	}
-}
-
-.item:not(.blurredStyle) {
-	transition: all 0s;
-
-	&:hover {
-		animation: example 3s forwards infinite;
-	}
-}
-
-.bg {
-	display: none;
-}
-
-@supports (backdrop-filter: blur(15px)) {
-	.blurredStyle {
-		backdrop-filter: blur(15px);
-		background-color: transparent;
-	}
-}
-
-@supports not (backdrop-filter: blur(15px)) {
-	.bg {
-		display: block;
-		background-image: url('../assets/images/tburd_trip_full_texturefinal.jpeg');
-		background-size: cover;
-		background-position: bottom center;
-		position: absolute;
-		left: 20px;
-		bottom: 0px;
-		right: 20px;
-		z-index: 100;
-		filter: blur(12px);
-	}
-
-	.item:not(.blurredStyle) {
-		transition: all 0.3s;
-		background-color: 'transparent';
-		&:hover {
-			animation: none;
-			background-color: rgba(#6d0052, 0.4);
-		}
 	}
 }
