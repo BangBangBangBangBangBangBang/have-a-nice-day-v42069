@@ -24,7 +24,7 @@ const IndexPage = () => (
 				})}
 			</div>
 			<StaticImage
-				src='../assets/images/reveal/2-rows-revealed__tburd_trip_full_web.jpg'
+				src='../assets/images/reveal/3-rows-revealed__tburd_trip_full_web.jpg'
 				alt='not a sheet of acid'
 				placeholder='blurred'
 				layout='fullWidth'
