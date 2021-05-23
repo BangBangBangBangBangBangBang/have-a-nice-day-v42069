@@ -79,7 +79,7 @@ module.exports = {
 			resolve: 'gatsby-plugin-google-analytics',
 			options: {
 				trackingId: "G-BZ8W1BW6VJ",
-				head: true,
+				head: false,
 				sampleRate: 5,
 				siteSpeedSampleRate: 10,
 				cookieDomain: "haveaniceday.wtf",
