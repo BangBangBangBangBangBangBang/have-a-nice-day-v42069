@@ -30,7 +30,7 @@ module.exports = {
 			resolve: `gatsby-plugin-gdpr-cookies`,
 			options: {
 				googleAnalytics: {
-					trackingId: '', // leave empty if you want to disable the tracker
+					trackingId: 'G-BZ8W1BW6VJ', // leave empty if you want to disable the tracker
 					cookieName: 'gatsby-gdpr-google-analytics', // default
 					anonymize: true, // default
 				},
