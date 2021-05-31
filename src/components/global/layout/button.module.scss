@@ -1,0 +1,11 @@
+.button {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: orangered;
+    z-index: 400;
+    padding: 1rem 1.6rem;
+    border-radius: 1rem;
+    border: 2px solid teal;
+}
