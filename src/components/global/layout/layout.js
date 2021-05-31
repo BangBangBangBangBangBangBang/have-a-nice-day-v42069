@@ -7,9 +7,12 @@ import SEO from '@global/seo'
 
 import './global.scss'
 
+import BlogButton from './BlogButton'
+
 const Layout = ({ children }) => (
 	<>
 		<SEO />
+		<BlogButton />
 		<Header />
 		<main>{children}</main>
 		<Footer />
