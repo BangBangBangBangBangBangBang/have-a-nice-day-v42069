@@ -50,6 +50,14 @@ module.exports = {
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
+				name: 'trippy',
+				path: './src/assets/images/TRIPPY100HITS/',
+			},
+			__key: 'trippy',
+		},
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
 				name: 'images',
 				path: './src/assets/images/',
 			},
@@ -77,11 +85,11 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-google-gtag`,
 			options: {
-			  // You can add multiple tracking ids and a pageview event will be fired for all of them.
-			  trackingIds: [
-				"G-BZ8W1BW6VJ", // Google Analytics / GA
-			  ],
+				// You can add multiple tracking ids and a pageview event will be fired for all of them.
+				trackingIds: [
+					'G-BZ8W1BW6VJ', // Google Analytics / GA
+				],
 			},
-		  },
+		},
 	],
 }
