@@ -5,6 +5,7 @@ import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
 import Layout from '@global/layout/layout'
 import * as styles from '../components/index.module.scss'
 import { links } from '../data'
+import { Tag } from '../assets/images/icons'
 
 const IndexPage = ({ data }) => {
 	return (
@@ -32,6 +33,9 @@ const IndexPage = ({ data }) => {
 									<>
 										<GatsbyImage image={image} key={link.url} alt='' />
 										<p>SOLD</p>
+										<span>
+											<Tag />
+										</span>
 									</>
 								)}
 							</a>
