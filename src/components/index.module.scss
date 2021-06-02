@@ -19,7 +19,9 @@
 .item {
 	flex-basis: 10%;
 	height: 10%;
-	display: block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .item:not(div) {
@@ -28,6 +30,30 @@
 
 	&:hover {
 		animation: example 3s forwards infinite;
+	}
+}
+
+.sold {
+	position: relative;
+	background-color: #040479;
+
+	div {
+		transition: opacity 0.2s;
+	}
+
+	p {
+		position: absolute;
+		opacity: 0;
+		transition: opacity 0.2s;
+	}
+
+	&:hover {
+		div {
+			opacity: 0.5 !important;
+		}
+		p {
+			opacity: 1;
+		}
 	}
 }
 
