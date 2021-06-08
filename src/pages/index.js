@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image'
+import ReactAudioPlayer from 'react-audio-player'
 
 import Layout from '@global/layout/layout'
 import * as styles from '../components/index.module.scss'
@@ -10,13 +11,16 @@ import { Tag } from '../assets/images/icons'
 const IndexPage = ({ data }) => {
 	return (
 		<Layout>
+			<div className={styles.music}>
+				<ReactAudioPlayer src={data.song.publicURL} autoPlay={true} controls />
+			</div>
 			<div className={styles.container}>
 				<div className={styles.grid}>
 					{links.map((link, i) => {
 						const index = `00${i + 1}`.slice(-3)
 						const imageMatch =
 							link.sold &&
-							data.allFile.edges.find(
+							data.trippy.edges.find(
 								({ node }) => node.name === `tburd_LSD_0${index}a`
 							)
 						const image = link.sold && getImage(imageMatch.node)
@@ -57,7 +61,7 @@ export default IndexPage
 
 export const query = graphql`
 	query {
-		allFile(filter: { sourceInstanceName: { eq: "trippy" } }) {
+		trippy: allFile(filter: { sourceInstanceName: { eq: "trippy" } }) {
 			edges {
 				node {
 					id
@@ -71,6 +75,9 @@ export const query = graphql`
 					}
 				}
 			}
+		}
+		song: file(name: { eq: "LSDAO" }) {
+			publicURL
 		}
 	}
 `
