@@ -1,4 +1,7 @@
-have a nice day 420 launch site
-gatsby
-yeet
-go steelers
+```
+git clone blah
+
+yarn install
+
+yarn start
+```
