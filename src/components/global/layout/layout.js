@@ -9,12 +9,17 @@ import './global.scss'
 
 import BlogButton from './BlogButton'
 import DiscordButton from './DiscordButton'
+import TburdBlogButton from './TburdBlogButton'
 
 const Layout = ({ children }) => (
 	<>
 		<SEO />
-		<BlogButton />
-		<DiscordButton />
+		<div className="flex-container">
+			<BlogButton />
+			<DiscordButton />
+			<TburdBlogButton />
+		</div>
+
 		<Header />
 		<main>{children}</main>
 		<Footer />
