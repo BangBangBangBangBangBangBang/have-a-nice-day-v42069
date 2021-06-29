@@ -1,13 +1,13 @@
 import React from 'react'
-import * as styles from './discordbutton.module.scss'
+import * as styles from './tburdbutton.module.scss'
 
-const DiscordButton = () => {
+const TburdBlogButton = () => {
     return (
         <a className={styles.button} href="https://discord.gg/3eAKMVcWd8" target='_blank' rel='noreferrer'>
-            Discord
+            Tburd Blog
         </a>
     );
 
 }
 
-export default DiscordButton;
+export default TburdBlogButton;
