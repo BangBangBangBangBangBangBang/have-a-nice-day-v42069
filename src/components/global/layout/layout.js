@@ -8,11 +8,13 @@ import SEO from '@global/seo'
 import './global.scss'
 
 import BlogButton from './BlogButton'
+import DiscordButton from './DiscordButton'
 
 const Layout = ({ children }) => (
 	<>
 		<SEO />
 		<BlogButton />
+		<DiscordButton />
 		<Header />
 		<main>{children}</main>
 		<Footer />
