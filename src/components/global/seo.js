@@ -10,7 +10,7 @@ const SEO = ({
 }) => {
 	const data = useStaticQuery(graphql`
 		query SEOQuery {
-			file(relativePath: { eq: "disscord-icons/lucille.png" }) {
+			file(relativePath: { eq: "disscord-icons/LSDPROSHOPS_bluntfish-2_chroma2_Glitch.jpeg" }) {
 				publicURL
 			}
 		}
