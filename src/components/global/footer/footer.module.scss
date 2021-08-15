@@ -1,5 +1,5 @@
 .footer {
-	padding: 3.2rem 0;
+	padding: 3.2rem 0 0;
 	font-size: 1.6rem;
 	background-color: #7a05a5;
 }
@@ -28,6 +28,18 @@
 
 .img {
 	margin: 10px;
+	margin-top: 2rem;
+}
+
+.disclaimer {
+	font-size: 1.4rem;
+	font-family: sans-serif;
+	text-align: center;
+	color: white;
+	opacity: 0.8;
+	background-color: #4b2758;
+	padding: 2rem 0;
+	margin-top: 2rem;
 }
 
 @media only screen and (max-width: 800px) {
