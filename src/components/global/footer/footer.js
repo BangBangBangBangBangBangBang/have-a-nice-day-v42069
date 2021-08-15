@@ -66,6 +66,15 @@ const Footer = () => {
 					})}
 				</div>
 			</div>
+
+			<div className={styles.disclaimer}>
+				<div className='wrapper-sm'>
+					<p>
+						DISCLAIMER: THIS IS ART ONLY, NOT LSD. THERE ARE NO DRUGS OF ANY
+						KIND OFFERED FOR PURCHASE, OR OTHERWISE. THIS IS JUST ART. ok cool.
+					</p>
+				</div>
+			</div>
 		</footer>
 	)
 }
