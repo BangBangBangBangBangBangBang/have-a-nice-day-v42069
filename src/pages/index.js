@@ -5,7 +5,6 @@ import ReactAudioPlayer from 'react-audio-player'
 
 import Layout from '@global/layout/layout'
 import * as styles from '../components/index.module.scss'
-import { links } from '../data'
 import { Tag } from '../assets/images/icons'
 
 const IndexPage = ({ data }) => {
@@ -16,26 +15,26 @@ const IndexPage = ({ data }) => {
 			</div>
 			<div className={styles.container}>
 				<div className={styles.grid}>
-					{links.map((link, i) => {
+					{data.hits.edges.map(({ node: hit }, i) => {
 						const index = `00${i + 1}`.slice(-3)
 						const imageMatch =
-							link.sold &&
+							hit.sold &&
 							data.trippy.edges.find(
 								({ node }) => node.name === `tburd_LSD_0${index}a`
 							)
-						const image = link.sold && getImage(imageMatch.node)
+						const image = hit.sold && getImage(imageMatch.node)
 						return (
 							<a
-								href={link.url}
-								key={link.url}
+								href={hit.url}
+								key={hit.id}
 								target='_blank'
 								rel='noreferrer'
-								className={`${styles.item} ${link.sold && styles.sold}`}
+								className={`${styles.item} ${hit.sold && styles.sold}`}
 								aria-label={`Go to Have a Nice Day #${i}`}
 							>
-								{link.sold && (
+								{hit.sold && (
 									<>
-										<GatsbyImage image={image} key={link.url} alt='' />
+										<GatsbyImage image={image} key={hit.url} alt='' />
 										<p>SOLD</p>
 										<span>
 											<Tag />
@@ -73,6 +72,16 @@ export const query = graphql`
 							layout: CONSTRAINED
 						)
 					}
+				}
+			}
+		}
+		hits: allHits(sort: { fields: name, order: ASC }) {
+			edges {
+				node {
+					id
+					name
+					sold
+					url
 				}
 			}
 		}
