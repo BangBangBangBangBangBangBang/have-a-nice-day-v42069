@@ -2,15 +2,19 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const SEO = ({
+const Seo = ({
 	title = `HAVE A NICE DAY`,
 	description = `HAVE A NICE DAY`,
 	url = `https://haveaniceday.wtf`,
 	article,
 }) => {
 	const data = useStaticQuery(graphql`
-		query SEOQuery {
-			file(relativePath: { eq: "disscord-icons/LSDPROSHOPS_bluntfish-2_chroma2_Glitch.jpeg" }) {
+		query SeoQuery {
+			file(
+				relativePath: {
+					eq: "disscord-icons/LSDPROSHOPS_bluntfish-2_chroma2_Glitch.jpeg"
+				}
+			) {
 				publicURL
 			}
 		}
@@ -39,4 +43,4 @@ const SEO = ({
 	)
 }
 
-export default SEO
+export default Seo
