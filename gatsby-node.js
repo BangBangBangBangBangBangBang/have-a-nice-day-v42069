@@ -14,13 +14,13 @@ exports.sourceNodes = async ({
 	}
 
 	const results1 = await fetch(
-		'https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=50&collection=have-a-nice-day-tburd',
+		'https://api.opensea.io/api/v1/assets?order_direction=desc&offset=0&limit=50&collection=lsdao',
 		options
 	)
 	const hits1 = await results1.json()
 
 	const results2 = await fetch(
-		'https://api.opensea.io/api/v1/assets?order_direction=desc&offset=50&limit=50&collection=have-a-nice-day-tburd',
+		'https://api.opensea.io/api/v1/assets?order_direction=desc&offset=50&limit=50&collection=lsdao',
 		options
 	)
 	const hits2 = await results2.json()
