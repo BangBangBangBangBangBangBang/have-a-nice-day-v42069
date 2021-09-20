@@ -3,7 +3,7 @@ import * as styles from './discordbutton.module.scss'
 
 const DiscordButton = () => {
     return (
-        <a className={styles.button} href="https://discord.gg/3eAKMVcWd8" target='_blank' rel='noreferrer'>
+        <a className={styles.button} href="https://discord.gg/GdmFAgtaYm" target='_blank' rel='noreferrer'>
             Discord
         </a>
     );
