@@ -33,24 +33,68 @@ const Footer = () => {
 			<div className={`wrapper ${styles.inner}`}>
 				<nav className={styles.nav}>
 					<p>
-						Art banged out by{' '}
+						Art:{' '}
 						<a
 							href='https://twitter.com/timtime'
 							target='_blank'
 							rel='noreferrer'
 						>
-							Timburdick
+							TBurd
 						</a>
 					</p>
 
 					<p>
-						Site banged out by{' '}
+						Lead Dev: {' '}
 						<a
 							href='https://github.com/stormcloud266'
 							target='_blank'
 							rel='noreferrer'
 						>
 							Stormcloud266
+						</a>
+					</p>
+
+					<p>
+						Here to prop you up: {' '}
+						<a
+							href='https://twitter.com/vrycmfy'
+							target='_blank'
+							rel='noreferrer'
+						>
+							chair
+						</a>
+					</p>
+
+					<p>
+						Duck Commander: {' '}
+						<a
+							href='https://twitter.com/duckcmdr'
+							target='_blank'
+							rel='noreferrer'
+						>
+							Kilgore
+						</a>
+					</p>
+
+					<p>
+						Kittyslasher: {' '}
+						<a
+							href='https://twitter.com/Kittyslashr'
+							target='_blank'
+							rel='noreferrer'
+						>
+							Meow
+						</a>
+					</p>
+
+					<p>
+						Love Society DAO: {' '}
+						<a
+							href='https://twitter.com/lovesocietydao'
+							target='_blank'
+							rel='noreferrer'
+						>
+							Loves You
 						</a>
 					</p>
 				</nav>
