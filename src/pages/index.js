@@ -10,9 +10,7 @@ import { Tag } from '../assets/images/icons'
 const IndexPage = ({ data }) => {
 	return (
 		<Layout>
-			<div className={styles.music}>
-				<ReactAudioPlayer src={data.song.publicURL} autoPlay={true} controls />
-			</div>
+
 			<div className={styles.container}>
 				<div className={styles.grid}>
 					{data.hits.edges.map(({ node: hit }, i) => {
@@ -51,6 +49,9 @@ const IndexPage = ({ data }) => {
 					placeholder='blurred'
 					layout='fullWidth'
 				/>
+			</div>
+			<div className={styles.music}>
+				<ReactAudioPlayer src={data.song.publicURL} autoPlay={true} controls />
 			</div>
 		</Layout>
 	)
