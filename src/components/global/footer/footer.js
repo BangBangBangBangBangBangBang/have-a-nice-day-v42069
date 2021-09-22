@@ -33,7 +33,7 @@ const Footer = () => {
 			<div className={`wrapper ${styles.inner}`}>
 				<nav className={styles.nav}>
 					<p>
-						Art:{' '}
+						Art + Music:{' '}
 						<a
 							href='https://twitter.com/timtime'
 							target='_blank'
