@@ -1,0 +1,25 @@
+.container {
+	height: 500px;
+	position: relative;
+	video {
+		height: 500px;
+		width: 100%;
+		object-fit: cover;
+		position: absolute;
+	}
+}
+
+.image {
+	height: 500px;
+	width: 100%;
+	object-fit: cover;
+	position: absolute;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.container {
+		video {
+			display: none;
+		}
+	}
+}
