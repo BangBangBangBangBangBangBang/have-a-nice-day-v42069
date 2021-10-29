@@ -28,86 +28,59 @@ const Footer = () => {
 
 	const icons = data.allFile.edges
 
+	const links = [
+		{
+			label: 'Art + Music',
+			linkText: 'TBurd',
+			url: 'https://twitter.com/timtime',
+		},
+		{
+			label: 'Lead Dev',
+			linkText: 'Stormcloud266',
+			url: 'https://github.com/stormcloud266',
+		},
+		{
+			label: 'Here to prop you up',
+			linkText: 'chair',
+			url: 'https://twitter.com/vrycmfy',
+		},
+		{
+			label: 'Duck Commander',
+			linkText: 'Kilgore',
+			url: 'https://twitter.com/duckcmdr',
+		},
+		{
+			label: 'Kittyslasher',
+			linkText: 'Meow',
+			url: 'https://twitter.com/Kittyslashr',
+		},
+		{
+			label: 'Love Society DAO',
+			linkText: 'Loves You',
+			url: 'https://twitter.com/lovesocietydao',
+		},
+	]
+
 	return (
 		<footer className={styles.footer}>
 			<div className={`wrapper ${styles.inner}`}>
 				<nav className={styles.nav}>
-					<p>
-						Art + Music:{' '}
-						<a
-							href='https://twitter.com/timtime'
-							target='_blank'
-							rel='noreferrer'
-						>
-							TBurd
-						</a>
-					</p>
-
-					<p>
-						Lead Dev: {' '}
-						<a
-							href='https://github.com/stormcloud266'
-							target='_blank'
-							rel='noreferrer'
-						>
-							Stormcloud266
-						</a>
-					</p>
-
-					<p>
-						Here to prop you up: {' '}
-						<a
-							href='https://twitter.com/vrycmfy'
-							target='_blank'
-							rel='noreferrer'
-						>
-							chair
-						</a>
-					</p>
-
-					<p>
-						Duck Commander: {' '}
-						<a
-							href='https://twitter.com/duckcmdr'
-							target='_blank'
-							rel='noreferrer'
-						>
-							Kilgore
-						</a>
-					</p>
-
-					<p>
-						Kittyslasher: {' '}
-						<a
-							href='https://twitter.com/Kittyslashr'
-							target='_blank'
-							rel='noreferrer'
-						>
-							Meow
-						</a>
-					</p>
-
-					<p>
-						Love Society DAO: {' '}
-						<a
-							href='https://twitter.com/lovesocietydao'
-							target='_blank'
-							rel='noreferrer'
-						>
-							Loves You
-						</a>
-					</p>
+					{links.map(({ label, linkText, url }) => (
+						<p key={label}>
+							{label}:{' '}
+							<a href={url} target='_blank' rel='noreferrer'>
+								{linkText}
+							</a>
+						</p>
+					))}
 				</nav>
 
 				<div className={styles.discord}>
-					{icons.map(({ node }) => {
-						const imageData = getImage(node)
-						return (
-							<div className={styles.img} key={node.id}>
-								<GatsbyImage image={imageData} alt='my gatsby image' />
-							</div>
-						)
-					})}
+					{icons.map(({ node }) => (
+						<div className={styles.img} key={node.id}>
+							<GatsbyImage image={getImage(node)} alt='' />
+						</div>
+					))}
 				</div>
 			</div>
 
