@@ -7,19 +7,9 @@ import Seo from '@global/seo'
 
 import './global.scss'
 
-import BlogButton from './BlogButton'
-import DiscordButton from './DiscordButton'
-import TburdBlogButton from './TburdBlogButton'
-
 const Layout = ({ children }) => (
 	<>
 		<Seo />
-		<div className='flex-container'>
-			<BlogButton />
-			<DiscordButton />
-			<TburdBlogButton />
-		</div>
-
 		<Header />
 		<main>{children}</main>
 		<Footer />
