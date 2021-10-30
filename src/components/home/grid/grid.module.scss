@@ -1,0 +1,110 @@
+.container {
+	max-width: 1200px;
+	position: relative;
+	margin: 60px auto;
+	padding: 0 20px;
+}
+
+.grid {
+	display: grid;
+	grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 20px;
+	right: 20px;
+	z-index: 100;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	background-color: rgba(#040479, 0);
+
+	&:hover {
+		background-color: rgba(#040479, 0.15);
+		animation: hueRotate 3s forwards infinite;
+	}
+}
+
+.item.sold {
+	position: relative;
+
+	p {
+		position: absolute;
+		opacity: 0;
+		transition: opacity 0.2s;
+	}
+
+	span {
+		display: none;
+		position: absolute;
+		height: 20px;
+		width: 20px;
+	}
+
+	&:hover {
+		animation: none;
+		background-color: #040479;
+
+		:global(.gatsby-image-wrapper) {
+			opacity: 0.6;
+			transition: all 0.3s;
+		}
+
+		p {
+			opacity: 1;
+		}
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.item.sold {
+		background-color: #040479;
+
+		:global(.gatsby-image-wrapper) {
+			opacity: 0.7;
+		}
+
+		p {
+			opacity: 1;
+		}
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.item.sold {
+		p {
+			display: none;
+		}
+		span {
+			display: block;
+		}
+	}
+}
+
+@supports not (backdrop-filter: hue-rotate(0deg)) {
+	.item {
+		transition: all 0.3s;
+		// background-color: 'transparent';
+		&:hover {
+			animation: none;
+			background-color: rgba(#040479, 0.4);
+		}
+	}
+}
+
+@keyframes hueRotate {
+	0% {
+		backdrop-filter: hue-rotate(0deg);
+	}
+	50% {
+		backdrop-filter: hue-rotate(420deg);
+	}
+	100% {
+		backdrop-filter: hue-rotate(0deg);
+	}
+}
