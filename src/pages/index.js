@@ -1,28 +1,15 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import ReactAudioPlayer from 'react-audio-player'
-
 import Layout from '@global/layout/layout'
 import Grid from '@components/home/grid/grid'
-import * as styles from '../components/index.module.scss'
+import MusicPlayer from '@components/home/musicPlayer/musicPlayer'
 
-const IndexPage = ({ data }) => {
+const IndexPage = () => {
 	return (
 		<Layout>
 			<Grid />
-			<div className={styles.music}>
-				<ReactAudioPlayer src={data.song.publicURL} autoPlay={true} controls />
-			</div>
+			<MusicPlayer />
 		</Layout>
 	)
 }
 
 export default IndexPage
-
-export const query = graphql`
-	query {
-		song: file(name: { eq: "LSDAO" }) {
-			publicURL
-		}
-	}
-`
