@@ -89,7 +89,7 @@
 @supports not (backdrop-filter: hue-rotate(0deg)) {
 	.item {
 		transition: all 0.3s;
-		// background-color: 'transparent';
+
 		&:hover {
 			animation: none;
 			background-color: rgba(#040479, 0.4);
